@@ -1,0 +1,37 @@
+# Environments
+.env
+.env.*
+.venv/
+env/
+venv/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Logs and databases
+logs/
+*.log
+*.db
+*.sqlite
+*.local
+
+# JavaScript / Node (just in case they are run at root or frontend)
+node_modules/
+/frontend/node_modules/
+/frontend/dist/
+
+# Archives
+archived_data_files.zip
+
+# OS / IDE
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

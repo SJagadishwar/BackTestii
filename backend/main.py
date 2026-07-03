@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException, Depends, status, Request, Query
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import Optional, Dict, Any
 from backend.services import strategy_service
@@ -24,6 +25,14 @@ ALGORITHM = os.getenv("ALGORITHM")
 INTERNAL_CLIENT_KEY = os.getenv("INTERNAL_CLIENT_KEY")
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 Base.metadata.create_all(bind=engine)
 

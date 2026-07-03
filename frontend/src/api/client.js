@@ -3,7 +3,7 @@
  * All requests routed through Vite proxy: /api → FastAPI backend
  */
 
-const BASE = '/api';
+const BASE = import.meta.env.VITE_API_URL || '/api';
 const INTERNAL_KEY = import.meta.env.VITE_INTERNAL_CLIENT_KEY || 'backtestii_internal_secret_key_2026';
 
 function headers() {

@@ -37,7 +37,7 @@ app.add_middleware(
 Base.metadata.create_all(bind=engine)
 
 
-@app.get("/health")
+@app.api_route("/health", methods=["GET", "HEAD"])
 def health():
     return {"status": "ok"}
 
